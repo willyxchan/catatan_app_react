@@ -26,7 +26,7 @@
 
 /* Yang diatas bawaan */
 
-// Versi 1
+/* Versi 1
 import React from 'react';
 import Home from './Home';
 
@@ -39,3 +39,26 @@ function App() {
 }
 
 export default App;
+*/
+
+// Versi 2
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Ganti Switch dengan Routes
+import Home from './Home';
+import TambahCatatan from './TambahCatatan';
+
+function App() {
+  return (
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/tambah-catatan" element={<TambahCatatan />} /> {/* Ganti Route */}
+          <Route path="/" element={<Home />} /> {/* Ganti Route */}
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
